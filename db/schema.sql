@@ -12,7 +12,7 @@ CREATE TABLE Department (
 -- Creates the Role table and its child elements--
 CREATE TABLE Role(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    Title VARCHAR(10) NOT NULL,
+    Title VARCHAR(30) NOT NULL,
     Salary DECIMAL(10, 2) NOT NULL,
     department_id INT,
     FOREIGN KEY (department_id) REFERENCES Department(id)
