@@ -23,7 +23,7 @@
     "dotenv": "^16.0.3",
     "figlet": "^1.5.2",
     "gradient-string": "^2.0.2",
-    "inquirer": "^9.1.4",
+    "inquirer": "^8.2.5",
     "mysql2": "^3.1.2"
   }
 }
