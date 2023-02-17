@@ -14,6 +14,10 @@
 This program is a practice of mysql and its relation  to javascript  and npm packages by creating  an employee management app. It was certainly a challenging, but rewarding process. Some details still need to be ironed out, but at the point of writing this I can safely say that it is both functional and effective! 
 ## Instructions
 To use this program, run node.js in the CLI of your choice. To learn more on how to use it, a video has been included to this document: 
+
+https://user-images.githubusercontent.com/112973907/219812175-07db542b-f882-468f-9517-dc19f60cdc0a.mp4
+
+
 ## Credits
 N/A
 ## License
