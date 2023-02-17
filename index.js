@@ -151,7 +151,9 @@ const addRole = () =>
     })
 
 
-const addEmployee = () =>
+const addEmployee = () => {
+
+
     inquirer.prompt([{
         type: "input",
         name: "firstEmpName",
@@ -183,7 +185,8 @@ const addEmployee = () =>
             console.log("Employee added succesfully!");
             questions();
         })
-    });
+    })
+};
 // Update functions
 const updateEmployeeManagers = () => {
     let sql = "SELECT Employee.id, Employee.first_name, Employee.last_name, Employee.manager_id FROM Employee";
@@ -277,7 +280,7 @@ const deleteRole = () => {
             let roleId;
             res.forEach((Role) => {
                 if (answers.chosenRole === `${Role.id} ${Role.title}`) {
-                    RoleId = Role.id;
+                    roleId = Role.id;
                 }
             });
             let sql = "DELETE FROM Role WHERE Role.id = ?"
@@ -292,10 +295,10 @@ const deleteRole = () => {
 
 
 const deleteEmployee = () => {
-    let sql = "SELECT Employee.first_name, Employee.last_name FROM Employee";
+    let sql = "SELECT Employee.id, Employee.first_name, Employee.last_name FROM Employee";
     db.query(sql, (err, res) => {
         let employeeNameArray = [];
-        res.forEach((Employee) => { employeeNameArray.push(`${Employee.first_name} ${Employee.last_name}`); })
+        res.forEach((Employee) => { employeeNameArray.push(`${Employee.id} ${Employee.first_name} ${Employee.last_name}`); })
 
         inquirer.prompt([{
             type: "list",
@@ -306,7 +309,7 @@ const deleteEmployee = () => {
         ]).then((answers) => {
             let employeeId;
             res.forEach((Employee) => {
-                if (answers.chosenEmployee === `${Employee.id} ${Employee.title}`) {
+                if (answers.chosenEmployee === `${Employee.id} ${Employee.first_name} ${Employee.last_name}`) {
                     employeeId = Employee.id;
                 }
             });
@@ -321,9 +324,9 @@ const deleteEmployee = () => {
         })
     });
 }
-figlet.text('Welcome to Employee Tracker',
+figlet.text('Employee Tracker',
     {
-        font: 'Rectangles',
+        font: 'big',
         horizontalLayout: 'default',
         verticalLayout: 'default',
     }, function (err, data) {
@@ -332,7 +335,7 @@ figlet.text('Welcome to Employee Tracker',
             console.dir(err);
             return;
         }
-        console.log(gradient.pastel.multiline(data));
+        console.log(gradient.retro.multiline(data));
     });
 
 setTimeout(questions, 1000);
