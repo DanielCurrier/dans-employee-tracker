@@ -1,4 +1,7 @@
 # Dan's Employee Tracker
+
+![employee-tracker](https://user-images.githubusercontent.com/112973907/219803645-c41bcbf1-c219-4150-9f20-7c7694882902.png)
+
 # Table of Contents
 *[Description](#description)
 *[Installation](#installation)
