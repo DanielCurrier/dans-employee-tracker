@@ -22,10 +22,11 @@ CREATE TABLE Role (
 -- Creates the Employee table and its child elements--
 Create TABLE Employee (
     id INT NOT NULL AUTO_INCREMENT,
-    first_name VARCHAR(30) NOT NULL UNIQUE,
-    last_name VARCHAR(30) NOT NULL UNIQUE,
+    first_name VARCHAR(30) NOT NULL,
+    last_name VARCHAR(30) NOT NULL,
     role_id INT NULL,
     manager_id INT,
     PRIMARY KEY(id),
-    FOREIGN KEY (role_id) REFERENCES Role(id)
+    FOREIGN KEY (role_id) REFERENCES Role(id),
+    FOREIGN KEY (manager_id) REFERENCES Employee(id)
 );
