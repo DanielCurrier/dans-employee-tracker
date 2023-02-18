@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 const figlet = require('figlet');
 const gradient = require('gradient-string');
 require('dotenv').config();
-
+// Using a dotenv to protect vital server information!
 const db = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -12,6 +12,7 @@ const db = mysql.createConnection({
     database: process.env.DB_NAME
 });
 
+// Start of inquirer prompts
 const questions = () =>
     inquirer.prompt([{
         type: 'list',
@@ -324,6 +325,7 @@ const deleteEmployee = () => {
         })
     });
 }
+// Figlet function for the splash screen 
 figlet.text('Employee Tracker',
     {
         font: 'big',
